@@ -37,7 +37,7 @@ router.get("/workouts", async (req, res) => {
     });
 });
 
-router.get('/workouts/range',(req, res) => {
+router.get('/workouts/range', async (req, res) => {
   await Workout.aggregate([{
     $addFields: {
       totalDuration: { $sum: "$exercises.duration" } ,
